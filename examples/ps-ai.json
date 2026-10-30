@@ -1,0 +1,416 @@
+{
+  "31": {
+    "inputs": {
+      "vae_name": "ae.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "加载VAE"
+    }
+  },
+  "34": {
+    "inputs": {
+      "upscale_method": "lanczos",
+      "megapixels": 8,
+      "image": [
+        "134",
+        0
+      ]
+    },
+    "class_type": "ImageScaleToTotalPixels",
+    "_meta": {
+      "title": "缩放图像（像素）"
+    }
+  },
+  "36": {
+    "inputs": {
+      "tile_width": [
+        "111",
+        0
+      ],
+      "tile_height": [
+        "111",
+        1
+      ],
+      "image": [
+        "34",
+        0
+      ]
+    },
+    "class_type": "TTP_Image_Tile_Batch",
+    "_meta": {
+      "title": "TTP_Image_Tile_Batch"
+    }
+  },
+  "42": {
+    "inputs": {
+      "text": "transparent material, beautiful gradient and shadow, product finishing, commercial photography, 3d rendering, c4d, high contrast，high quality, detailed, photograph , hd, 8k , 4k , sharp, highly detailed，High quality, cosmetic, turquoise cap, white plastic top, white and pale blue gradient frosted bottle body,",
+      "speak_and_recognation": {
+        "__value__": [
+          false,
+          true
+        ]
+      },
+      "clip": [
+        "162",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP文本编码"
+    }
+  },
+  "67": {
+    "inputs": {
+      "noise": [
+        "70",
+        0
+      ],
+      "guider": [
+        "72",
+        0
+      ],
+      "sampler": [
+        "68",
+        0
+      ],
+      "sigmas": [
+        "69",
+        0
+      ],
+      "latent_image": [
+        "129",
+        0
+      ]
+    },
+    "class_type": "SamplerCustomAdvanced",
+    "_meta": {
+      "title": "自定义采样器（高级）"
+    }
+  },
+  "68": {
+    "inputs": {
+      "sampler_name": "euler"
+    },
+    "class_type": "KSamplerSelect",
+    "_meta": {
+      "title": "K采样器选择"
+    }
+  },
+  "69": {
+    "inputs": {
+      "scheduler": "simple",
+      "steps": 4,
+      "denoise": 0.3,
+      "model": [
+        "162",
+        0
+      ]
+    },
+    "class_type": "BasicScheduler",
+    "_meta": {
+      "title": "基本调度器"
+    }
+  },
+  "70": {
+    "inputs": {
+      "noise_seed": 316430325547060
+    },
+    "class_type": "RandomNoise",
+    "_meta": {
+      "title": "随机噪波"
+    }
+  },
+  "72": {
+    "inputs": {
+      "model": [
+        "162",
+        0
+      ],
+      "conditioning": [
+        "73",
+        0
+      ]
+    },
+    "class_type": "BasicGuider",
+    "_meta": {
+      "title": "基本引导器"
+    }
+  },
+  "73": {
+    "inputs": {
+      "guidance": 2.5,
+      "conditioning": [
+        "42",
+        0
+      ]
+    },
+    "class_type": "FluxGuidance",
+    "_meta": {
+      "title": "Flux引导"
+    }
+  },
+  "77": {
+    "inputs": {
+      "unet_name": "绘梦光影魔术师 F.1 -全能写实-商业电商产品广告摄影_光影全能魔术师_V1.safetensors",
+      "weight_dtype": "fp8_e4m3fn"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "UNet加载器"
+    }
+  },
+  "78": {
+    "inputs": {
+      "clip_name1": "t5xxl_fp8_e4m3fn.safetensors",
+      "clip_name2": "clip_l.safetensors",
+      "type": "flux",
+      "device": "default"
+    },
+    "class_type": "DualCLIPLoader",
+    "_meta": {
+      "title": "双CLIP加载器"
+    }
+  },
+  "96": {
+    "inputs": {
+      "tile_size": 1024,
+      "overlap": 64,
+      "temporal_size": 64,
+      "temporal_overlap": 8,
+      "samples": [
+        "67",
+        0
+      ],
+      "vae": [
+        "31",
+        0
+      ]
+    },
+    "class_type": "VAEDecodeTiled",
+    "_meta": {
+      "title": "VAE解码（分块）"
+    }
+  },
+  "111": {
+    "inputs": {
+      "width_factor": 2,
+      "height_factor": 3,
+      "overlap_rate": 0.05,
+      "image": [
+        "34",
+        0
+      ]
+    },
+    "class_type": "TTP_Tile_image_size",
+    "_meta": {
+      "title": "TTP_Tile_image_size"
+    }
+  },
+  "127": {
+    "inputs": {
+      "padding": 128,
+      "tiles": [
+        "255",
+        0
+      ],
+      "positions": [
+        "36",
+        1
+      ],
+      "original_size": [
+        "36",
+        2
+      ],
+      "grid_size": [
+        "36",
+        3
+      ]
+    },
+    "class_type": "TTP_Image_Assy",
+    "_meta": {
+      "title": "TTP_Image_Assy"
+    }
+  },
+  "128": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "127",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "保存图像"
+    }
+  },
+  "129": {
+    "inputs": {
+      "pixels": [
+        "163",
+        0
+      ],
+      "vae": [
+        "31",
+        0
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "VAE编码"
+    }
+  },
+  "130": {
+    "inputs": {
+      "images": [
+        "163",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "预览图像"
+    }
+  },
+  "133": {
+    "inputs": {
+      "model_name": "4x-UltraSharp.pth"
+    },
+    "class_type": "UpscaleModelLoader",
+    "_meta": {
+      "title": "加载放大模型"
+    }
+  },
+  "134": {
+    "inputs": {
+      "upscale_model": [
+        "133",
+        0
+      ],
+      "image": [
+        "248",
+        0
+      ]
+    },
+    "class_type": "ImageUpscaleWithModel",
+    "_meta": {
+      "title": "使用模型放大图像"
+    }
+  },
+  "162": {
+    "inputs": {
+      "lora_name": "Flux Dev模型4步出图lora_Flux Dev 4-step.safetensors",
+      "strength_model": 1,
+      "strength_clip": 1,
+      "model": [
+        "77",
+        0
+      ],
+      "clip": [
+        "78",
+        0
+      ]
+    },
+    "class_type": "LoraLoader",
+    "_meta": {
+      "title": "加载LoRA"
+    }
+  },
+  "163": {
+    "inputs": {
+      "image": [
+        "36",
+        0
+      ]
+    },
+    "class_type": "easy imageBatchToImageList",
+    "_meta": {
+      "title": "Image Batch To Image List"
+    }
+  },
+  "233": {
+    "inputs": {
+      "image": "output (48).png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "加载图像"
+    }
+  },
+  "248": {
+    "inputs": {
+      "aspect_ratio": "original",
+      "proportional_width": 1,
+      "proportional_height": 1,
+      "fit": "letterbox",
+      "method": "lanczos",
+      "round_to_multiple": "8",
+      "scale_to_side": "None",
+      "scale_to_length": 2000,
+      "background_color": "#000000",
+      "image": [
+        "233",
+        0
+      ]
+    },
+    "class_type": "LayerUtility: ImageScaleByAspectRatio V2",
+    "_meta": {
+      "title": "LayerUtility: ImageScaleByAspectRatio V2"
+    }
+  },
+  "250": {
+    "inputs": {
+      "images": [
+        "252",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "对比图展示"
+    }
+  },
+  "252": {
+    "inputs": {
+      "text1": "001",
+      "text2": "002",
+      "footer_height": 100,
+      "font_name": "AlumniSansCollegiateOne-Regular.ttf",
+      "font_size": 150,
+      "mode": "normal",
+      "border_thickness": 20,
+      "speak_and_recognation": {
+        "__value__": [
+          false,
+          true
+        ]
+      },
+      "image1": [
+        "233",
+        0
+      ],
+      "image2": [
+        "127",
+        0
+      ]
+    },
+    "class_type": "CR Simple Image Compare",
+    "_meta": {
+      "title": "📱 CR Simple Image Compare"
+    }
+  },
+  "255": {
+    "inputs": {
+      "image": [
+        "96",
+        0
+      ]
+    },
+    "class_type": "ImageListToBatch+",
+    "_meta": {
+      "title": "🔧 Image List To Batch"
+    }
+  }
+}
