@@ -1,0 +1,87 @@
+{
+  "id": "com.chrisng88.ps-comfyui-bridge-auto",
+  "name": "PS ComfyUI 桥接（自动版）",
+  "version": "2.0.0",
+  "main": "index.html",
+  "manifestVersion": 5,
+  "host": {
+    "app": "PS",
+    "minVersion": "24.6.0"
+  },
+  "entrypoints": [
+    {
+      "type": "panel",
+      "id": "comfyuiBridgeAutoPanel",
+      "label": {
+        "default": "ComfyUI 桥接（自动版）"
+      },
+      "minimumSize": {
+        "width": 260,
+        "height": 360
+      },
+      "maximumSize": {
+        "width": 800,
+        "height": 900
+      },
+      "preferredDockedSize": {
+        "width": 280,
+        "height": 460
+      },
+      "preferredFloatingSize": {
+        "width": 320,
+        "height": 520
+      },
+      "icons": [
+        {
+          "width": 23,
+          "height": 23,
+          "path": "icons/icon_23.png",
+          "scale": [
+            1,
+            2
+          ],
+          "theme": [
+            "darkest",
+            "dark",
+            "medium",
+            "lightest",
+            "light",
+            "all"
+          ],
+          "species": [
+            "chrome"
+          ]
+        }
+      ]
+    }
+  ],
+  "requiredPermissions": {
+    "network": {
+      "domains": "all"
+    },
+    "localFileSystem": "fullAccess",
+    "clipboard": "readAndWrite"
+  },
+  "icons": [
+    {
+      "width": 48,
+      "height": 48,
+      "path": "icons/icon_64.png",
+      "scale": [
+        1,
+        2
+      ],
+      "theme": [
+        "darkest",
+        "dark",
+        "medium",
+        "lightest",
+        "light",
+        "all"
+      ],
+      "species": [
+        "pluginList"
+      ]
+    }
+  ]
+}

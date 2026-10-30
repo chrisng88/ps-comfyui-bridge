@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      font-family: -apple-system, "Segoe UI", sans-serif;
+      padding: 12px;
+      font-size: 12px;
+      color: var(--uxp-host-text-color, #eee);
+    }
+    h3 { margin: 4px 0 10px 0; font-size: 13px; }
+    .row { margin-bottom: 10px; }
+    label { display: block; margin-bottom: 3px; opacity: 0.8; }
+    input[type=text], input[type=number] {
+      width: 100%; box-sizing: border-box;
+    }
+    sp-button { width: 100%; margin-bottom: 8px; }
+    #status {
+      white-space: pre-wrap;
+      background: rgba(128,128,128,0.15);
+      border-radius: 4px;
+      padding: 8px;
+      min-height: 90px;
+      max-height: 220px;
+      overflow-y: auto;
+      font-size: 11px;
+      line-height: 1.5;
+    }
+    .ok { color: #6ec26e; }
+    .err { color: #e06c6c; }
+    hr { border: none; border-top: 1px solid rgba(128,128,128,0.3); margin: 12px 0; }
+  </style>
+</head>
+<body>
+  <h3>PS ⇄ ComfyUI 自动修图桥接（自动版）</h3>
+
+  <div class="row">
+    <label>ComfyUI 地址</label>
+    <input type="text" id="comfyUrl" value="http://127.0.0.1:8188" />
+  </div>
+
+  <div class="row">
+    <label>workflow_api.json（放在插件同目录下）</label>
+    <input type="text" id="workflowFile" value="workflow_api.json" />
+  </div>
+
+  <sp-button id="btnExportSend" variant="cta">1. 导出当前图并发送到 ComfyUI 处理</sp-button>
+  <sp-button id="btnFetchLatest" variant="secondary">2. 手动补拉结果（一般用不到）</sp-button>
+
+  <hr/>
+  <div class="row">
+    <label>运行状态</label>
+    <div id="status">等待操作…</div>
+  </div>
+
+  <script src="./index.js"></script>
+</body>
+</html>
