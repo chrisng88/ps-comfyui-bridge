@@ -1,5 +1,7 @@
 # PS ComfyUI 桥接（自动版）
 
+**中文** | [English](README.en.md)
+
 一个 Photoshop UXP 面板插件：把 PS 里正在修的图一键送到 ComfyUI 处理，处理完**自动置入回原来的文档**，不用手动导出、切换软件、再拖回来。
 
 ```
