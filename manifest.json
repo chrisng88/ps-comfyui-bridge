@@ -37,7 +37,25 @@
           "height": 23,
           "path": "icons/icon_23.png",
           "scale": [
-            1,
+            1
+          ],
+          "theme": [
+            "darkest",
+            "dark",
+            "medium",
+            "lightest",
+            "light",
+            "all"
+          ],
+          "species": [
+            "chrome"
+          ]
+        },
+        {
+          "width": 23,
+          "height": 23,
+          "path": "icons/icon_46.png",
+          "scale": [
             2
           ],
           "theme": [
@@ -66,9 +84,27 @@
     {
       "width": 48,
       "height": 48,
-      "path": "icons/icon_64.png",
+      "path": "icons/icon_48.png",
       "scale": [
-        1,
+        1
+      ],
+      "theme": [
+        "darkest",
+        "dark",
+        "medium",
+        "lightest",
+        "light",
+        "all"
+      ],
+      "species": [
+        "pluginList"
+      ]
+    },
+    {
+      "width": 48,
+      "height": 48,
+      "path": "icons/icon_96.png",
+      "scale": [
         2
       ],
       "theme": [
